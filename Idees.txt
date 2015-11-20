@@ -9,3 +9,4 @@
 	indiquant nextDirection() (+ durée?) en fonction de lastDirection). 
 	- Mélanger différentes formes de dessin ensemble ? 
 	- Le dessin pourrait se reset tout seul au bout d'un temps donné (aléa ?) 
+	- Ajouter un menu dans un deuxième panel sur le coté qui afficherait toutes les options sélectionnées actuellement.
