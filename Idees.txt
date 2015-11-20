@@ -1,11 +1,11 @@
 19/11/15: 
-	- Mise en place d'une IA ? Pour obtenir un effet d'écran de veille
-	- Possibilité de sauvegarde de l'image en cours 
+	- Mise en place d'une IA ? Pour obtenir un effet d'Ã©cran de veille
+	- PossibilitÃ© de sauvegarde de l'image en cours 
 
 20/11/15: 
-	- Possibilité de donner des formes en paramêtre pour l'IA. 
-	Afin d'obtenir des types de dessins différents. 
-	(Mise en place d'une classe abstraite Path qui permette de créer des ConcretePath
-	indiquant nextDirection() (+ durée?) en fonction de lastDirection). 
-	- Mélanger différentes formes de dessin ensemble ? 
-	- Le dessin pourrait se reset tout seul au bout d'un temps donné (aléa ?) 
+	- PossibilitÃ© de donner des formes en paramÃ©tre pour l'IA. 
+	Afin d'obtenir des types de dessins diffÃ©rents. 
+	(Mise en place d'une classe abstraite Path qui permette de crÃ©er des ConcretePath
+	indiquant nextDirection() (+ durÃ©e?) en fonction de lastDirection). 
+	- MÃ©langer diffÃ©rentes formes de dessin ensemble ? 
+	- Le dessin pourrait se reset tout seul au bout d'un temps donnÃ© (alÃ©a ?) 

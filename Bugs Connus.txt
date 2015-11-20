@@ -1,11 +1,11 @@
-Problème:
-	- Parfois, les lignes diagonales se décalent légèrement. 
-	- Ce bug a été remarqué sur des PC munis d'un processeur assez lent.
+ProblÃ©me:
+	- Parfois, les lignes diagonales se dÃ©calent lÃ©gÃ©rement. 
+	- Ce bug a Ã©tÃ© remarquÃ© sur des PC munis d'un processeur assez lent.
 Solution Possible: 
-	- Peut être causé par une mauvaise gestion des arrondis
+	- Peut Ã©tre causÃ© par une mauvaise gestion des arrondis
 	- Pause intempestives du processeur ? 
 
-Problème:
-	- le crayon peut sortir du cadre de l'écran
+ProblÃ©me:
+	- le crayon peut sortir du cadre de l'Ã©cran
 Solution Possible:
-	- Vérifier qu'il ne dépasse pas les limites
+	- VÃ©rifier qu'il ne dÃ©passe pas les limites

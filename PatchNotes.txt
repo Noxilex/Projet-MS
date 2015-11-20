@@ -1,15 +1,15 @@
 Version 1.1:
 
-	- Ajout d'une fonctionnalité ON/OFF qui permet d'activer/désactiver l'enregistrement
-	 en appuyant sur espace et ainsi déplacé le/les crayons vers une nouvelle position (barre espace)
-	- L'état actuel est indiqué par un voyant vert/rouge(activé/désactivé)
-	- Possibilité de changer le nombre de crayons actifs (&=1, é=2, "=3, '=4)
+	- Ajout d'une fonctionnalitÃ© ON/OFF qui permet d'activer/dÃ©sactiver l'enregistrement
+	 en appuyant sur espace et ainsi dÃ©placÃ© le/les crayons vers une nouvelle position (barre espace)
+	- L'Ã©tat actuel est indiquÃ© par un voyant vert/rouge(activÃ©/dÃ©sactivÃ©)
+	- PossibilitÃ© de changer le nombre de crayons actifs (&=1, Ã©=2, "=3, '=4)
 
 
 Version 1.0:
 
-	- Création de l'interface
-	- Support du clavier pour le contrôle des directions (flèches directionnelles)
+	- CrÃ©ation de l'interface
+	- Support du clavier pour le contrÃ©le des directions (flÃ©ches directionnelles)
 	- Evolution de la couleur sur le temps (multicolore) du crayon
-	- Nombre de crayons fixés à 4 par défaut (départ aux 4 coins de l'image)
-	- Appuyer sur R remet à zéro le dessin (mais pas la position des crayons)
+	- Nombre de crayons fixÃ©s Ã© 4 par dÃ©faut (dÃ©part aux 4 coins de l'image)
+	- Appuyer sur R remet Ã© zÃ©ro le dessin (mais pas la position des crayons)

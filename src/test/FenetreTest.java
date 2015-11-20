@@ -1,3 +1,4 @@
+package test;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -9,6 +10,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.swing.JPanel;
+
+import main.KeyMap;
 
 @SuppressWarnings("serial")
 public class FenetreTest extends JPanel implements Runnable {
