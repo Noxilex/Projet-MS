@@ -1,13 +1,9 @@
 package main;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 import javax.swing.JPanel;
 
@@ -35,12 +31,11 @@ public class Fenetre extends JPanel implements Runnable {
 	boolean running = true;
 
 	final int FPS = 60;
+	private int currentFPS = FPS;
 	int vitesse = 1;
 
 	private Thread thread;
-
-	private int diffX;
-	private int diffY;
+	
 	private int x;
 	private int y;
 
@@ -69,8 +64,9 @@ public class Fenetre extends JPanel implements Runnable {
 		down = m.isBas();
 		reset = m.hasToReset();
 		canWrite = m.canWrite();
-
 		nbOfPoints = m.getNbOfPoints();
+		
+		currentFPS = FPS + m.getFPSChanger();
 	}
 
 	public void start() {
@@ -91,7 +87,6 @@ public class Fenetre extends JPanel implements Runnable {
 	 * 2) Dessine les carrés sur l'image
 	 */
 	public void drawOnImage(boolean draw) {
-		System.out.println(firstTime +" " +draw);
 		if (firstTime) {			
 			tmp = new BufferedImage(getWidth(), getHeight(),				//On initialise l'image ici, car lorsqu'on appelle paintComponent, 
 					BufferedImage.TYPE_INT_RGB);							//le JPanel change de dimension et les points ne se dessinent plus au même endroit.
@@ -147,6 +142,10 @@ public class Fenetre extends JPanel implements Runnable {
 		if (nbOfPoints >= 4) {
 			g.fillRect(x, this.getHeight() - y, 1, 1);
 		}
+		
+		//Affichage des FPS
+		g2.setColor(new Color(hexaR, hexaV, hexaB));
+		g.drawString("FPS:"+currentFPS, getWidth()-50, 20);
 	}
 
 	/**
@@ -200,7 +199,7 @@ public class Fenetre extends JPanel implements Runnable {
 			}
 			repaint();
 			try {
-				Thread.sleep(1000 / FPS);
+				Thread.sleep(1000 / currentFPS);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

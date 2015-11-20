@@ -11,6 +11,11 @@ public class KeyMap implements KeyListener{
 	private boolean bas = false;
 	private boolean reset = false;
 	private boolean canWrite = true;
+	
+	private int FPSChanger = 0;
+	private int FPSInterval = 5;
+	private int maxFPSChange = 30;
+	
 	private int lastDirection = KeyEvent.VK_RIGHT;
 	private int nbOfPoints = 4;
 	
@@ -60,15 +65,17 @@ public class KeyMap implements KeyListener{
 			droite = false;
 		else if(key == KeyEvent.VK_UP){
 			haut= false;
-		}
-		else if(key == KeyEvent.VK_DOWN)
+		}else if(key == KeyEvent.VK_DOWN)
 			bas= false;
 	}
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {
+	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(e.getKeyChar() == '+' && maxFPSChange-FPSInterval >= FPSChanger)
+			FPSChanger += 5;
+		if(e.getKeyChar() == '-' && -maxFPSChange+FPSInterval <= FPSChanger)
+			FPSChanger -= 5;
 	}
 	
 	public boolean isGauche(){
@@ -101,5 +108,9 @@ public class KeyMap implements KeyListener{
 	
 	public boolean canWrite(){
 		return canWrite;
+	}
+
+	public int getFPSChanger() {
+		return FPSChanger;
 	}
 }

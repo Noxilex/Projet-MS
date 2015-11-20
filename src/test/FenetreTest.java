@@ -1,13 +1,9 @@
 package test;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 import javax.swing.JPanel;
 
@@ -42,8 +38,6 @@ public class FenetreTest extends JPanel implements Runnable {
 
 	private Thread thread;
 
-	private int diffX;
-	private int diffY;
 	private int x;
 	private int y;
 
