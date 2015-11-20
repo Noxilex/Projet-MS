@@ -1,3 +1,7 @@
+Version 1.2(en cours):
+	- Ajout d'un compteur de FPS
+	- Ajout d'un modificateur de FPS(Vitesse de jeu)
+
 Version 1.1:
 
 	- Ajout d'une fonctionnalité ON/OFF qui permet d'activer/désactiver l'enregistrement
