@@ -10,3 +10,6 @@
 	- Mélanger différentes formes de dessin ensemble ? 
 	- Le dessin pourrait se reset tout seul au bout d'un temps donné (aléa ?) 
 	- Ajouter un menu dans un deuxième panel sur le coté qui afficherait toutes les options sélectionnées actuellement.
+
+24/11/15: 
+	- Créer une classe abstraite pour la mise en place d'IA avancées. 	
