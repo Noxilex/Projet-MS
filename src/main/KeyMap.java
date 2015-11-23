@@ -16,6 +16,8 @@ public class KeyMap implements KeyListener{
 	private int FPSInterval = 5;
 	private int maxFPSChange = 30;
 	
+	boolean IA_Activated = false;
+	
 	private int lastDirection = KeyEvent.VK_RIGHT;
 	private int nbOfPoints = 4;
 	
@@ -33,6 +35,8 @@ public class KeyMap implements KeyListener{
 			nbOfPoints = 3;
 		if(e.getKeyChar() == '\'')
 			nbOfPoints = 4;
+		if(e.getKeyChar() == 'i')
+			IA_Activated = !IA_Activated;
 		if(key == KeyEvent.VK_SPACE)
 			canWrite = !canWrite;
 		if(key == KeyEvent.VK_LEFT){
@@ -112,5 +116,10 @@ public class KeyMap implements KeyListener{
 
 	public int getFPSChanger() {
 		return FPSChanger;
+	}
+
+	public boolean isIAActivated() {
+		// TODO Auto-generated method stub
+		return IA_Activated;
 	}
 }

@@ -67,12 +67,14 @@ public class Fenetre extends JPanel implements Runnable {
 	public Fenetre(boolean IA_State) {
 		this();
 		this.IA_State = IA_State;
+		m.IA_Activated = true;
 		cptIA = 0;
 		Random r = new Random();
 		maxOccurences = r.nextInt(20)+5;
 	}
 
 	private void handleControl() {
+		IA_State = m.isIAActivated();
 		if(IA_State){
 			updateDirectionIA();
 		}else{
