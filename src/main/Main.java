@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		JFrame jf = new JFrame();
-		Fenetre f = new Fenetre();
+		Fenetre f = new Fenetre(true);
 		jf.setPreferredSize(new Dimension(700,700));
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.setLayout(new BorderLayout());

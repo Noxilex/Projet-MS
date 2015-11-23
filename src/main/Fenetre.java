@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import javax.swing.JPanel;
 
@@ -15,6 +16,12 @@ public class Fenetre extends JPanel implements Runnable {
 	boolean up;
 	boolean down;
 	boolean reset;
+	
+	boolean IA_State;
+	int cptIA;
+	int maxOccurences;
+	//0:gauche 1:haut 2:droite 3:bas
+	int direction;
 
 	BufferedImage tmp;
 	Graphics2D g2;
@@ -56,12 +63,24 @@ public class Fenetre extends JPanel implements Runnable {
 
 		start();
 	}
+	
+	public Fenetre(boolean IA_State) {
+		this();
+		this.IA_State = IA_State;
+		cptIA = 0;
+		Random r = new Random();
+		maxOccurences = r.nextInt(20)+5;
+	}
 
 	private void handleControl() {
-		right = m.isDroite();
-		left = m.isGauche();
-		up = m.isHaut();
-		down = m.isBas();
+		if(IA_State){
+			updateDirectionIA();
+		}else{
+			right = m.isDroite();
+			left = m.isGauche();
+			up = m.isHaut();
+			down = m.isBas();
+		}
 		reset = m.hasToReset();
 		canWrite = m.canWrite();
 		nbOfPoints = m.getNbOfPoints();
@@ -172,6 +191,56 @@ public class Fenetre extends JPanel implements Runnable {
 			if (hexaV > 0)
 				hexaV--;
 		}
+	}
+	
+	private void updateDirectionIA(){
+		Random r = new Random();
+		if(cptIA%maxOccurences == 0){
+			maxOccurences = r.nextInt(5)*5+5;
+			int direction = r.nextInt(4);
+			switch(direction){
+			case 0:
+				left = true;
+				up = false;
+				right = false;
+				down = false;
+				break;
+			case 1: 
+				left = false;
+				up = true;
+				right = false;
+				down = false;
+				break;
+			case 2:
+				left = false;
+				up = false;
+				right = true;
+				down = false;
+				break;
+			case 3:
+				left = false;
+				up = false;
+				right = false;
+				down = true;
+				break;
+			}
+			direction = r.nextInt(4);
+			switch(direction){
+			case 0:
+				left = true;
+				break;
+			case 1: 
+				up = true;
+				break;
+			case 2:
+				right = true;
+				break;
+			case 3:
+				down = true;
+				break;
+			}
+		}
+		cptIA++;
 	}
 
 	/**
