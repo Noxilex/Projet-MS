@@ -41,15 +41,19 @@ public class iaGeometric extends iaAbstract{
 			direction = r.nextInt(4);
 			switch(direction){
 			case 0:
+				if(!right)
 				left = true;
 				break;
 			case 1: 
+				if(!down)
 				up = true;
 				break;
 			case 2:
+				if(!left)
 				right = true;
 				break;
 			case 3:
+				if(!up)
 				down = true;
 				break;
 			}

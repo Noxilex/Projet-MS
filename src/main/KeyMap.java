@@ -20,6 +20,7 @@ public class KeyMap implements KeyListener{
 	
 	private int lastDirection = KeyEvent.VK_RIGHT;
 	private int nbOfPoints = 4;
+	private boolean image;
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -80,6 +81,8 @@ public class KeyMap implements KeyListener{
 			FPSChanger += 5;
 		if(e.getKeyChar() == '-' && -maxFPSChange+FPSInterval <= FPSChanger)
 			FPSChanger -= 5;
+		if(e.getKeyChar() == '$')
+			image = true;
 	}
 	
 	public boolean isGauche(){
@@ -121,5 +124,13 @@ public class KeyMap implements KeyListener{
 	public boolean isIAActivated() {
 		// TODO Auto-generated method stub
 		return IA_Activated;
+	}
+	
+	public void dontNeedImage(){
+		image = false;
+	}
+	
+	public boolean needImage(){
+		return image;
 	}
 }

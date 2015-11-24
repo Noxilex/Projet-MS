@@ -4,8 +4,11 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
@@ -16,6 +19,7 @@ public class Fenetre extends JPanel implements Runnable {
 	boolean up;
 	boolean down;
 	boolean reset;
+	boolean image;
 	
 	boolean IA_State;
 	int cptIA;
@@ -83,6 +87,7 @@ public class Fenetre extends JPanel implements Runnable {
 			up = m.isHaut();
 			down = m.isBas();
 		}
+		image = m.needImage();
 		reset = m.hasToReset();
 		canWrite = m.canWrite();
 		nbOfPoints = m.getNbOfPoints();
@@ -195,6 +200,15 @@ public class Fenetre extends JPanel implements Runnable {
 		}
 	}
 	
+	public void saveImage(String nomImage){
+		File f = new File(nomImage);
+		try {
+			ImageIO.write(tmp, "png", f);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	private void updateDirectionIA(){
 		Random r = new Random();
 		if(cptIA%maxOccurences == 0){
@@ -255,6 +269,10 @@ public class Fenetre extends JPanel implements Runnable {
 			// updateAutoPosition();
 			updateCouleur();
 			handleControl();
+			if(image){
+				saveImage("test.png");
+				m.dontNeedImage();
+			}
 
 			if (left)
 				x -= vitesse;
