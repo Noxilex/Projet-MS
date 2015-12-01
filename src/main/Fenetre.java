@@ -247,16 +247,20 @@ public class Fenetre extends JPanel implements Runnable {
 			direction = r.nextInt(4);
 			switch(direction){
 			case 0:
-				left = true;
+				if(!right)
+					left = true;
 				break;
 			case 1: 
-				up = true;
+				if(!down)
+					up = true;
 				break;
 			case 2:
-				right = true;
+				if(!left)
+					right = true;
 				break;
 			case 3:
-				down = true;
+				if(!up)
+					down = true;
 				break;
 			}
 		}
