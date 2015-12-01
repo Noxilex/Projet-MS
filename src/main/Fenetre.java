@@ -21,7 +21,7 @@ public class Fenetre extends JPanel implements Runnable {
 	boolean reset;
 	boolean image;
 	
-	boolean IA_State;
+	boolean IA_State = false;
 	int cptIA;
 	int maxOccurences;
 	//0:gauche 1:haut 2:droite 3:bas
@@ -275,7 +275,7 @@ public class Fenetre extends JPanel implements Runnable {
 			handleControl();
 			
 			if(image){
-				saveImage("test.png");
+				saveImage("Resources/test.png");
 				keyMap.dontNeedImage();
 			}
 
