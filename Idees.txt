@@ -9,7 +9,11 @@
 	indiquant nextDirection() (+ durée?) en fonction de lastDirection). 
 	- Mélanger différentes formes de dessin ensemble ? 
 	- Le dessin pourrait se reset tout seul au bout d'un temps donné (aléa ?) 
-	- Ajouter un menu dans un deuxième panel sur le coté qui afficherait toutes les options sélectionnées actuellement.
+	- Ajouter un menu dans un deuxième panel sur le coté qui afficherait toutes les options 
+	sélectionnées actuellement.
 
 24/11/15: 
-	- Créer une classe abstraite pour la mise en place d'IA avancées. 	
+	- Créer une classe abstraite pour la mise en place d'IA avancées. 
+	- Mettre les idées dans un tableau excel pour savoir si elles ont été réalisées
+	- Améliorer l'IA pour qu'elle ne passe pas sur des chemins déjà tracés
+	(Snake)	

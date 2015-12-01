@@ -1,13 +1,16 @@
 Version 1.2(en cours):
-	- Ajout d'un compteur de FPS
-	- Ajout d'un modificateur de FPS(Vitesse de jeu)
+	- [Ajout] Compteur de FPS
+	- [Ajout] Modificateur de FPS(Vitesse de jeu) {'+', '-'}
+	- [Ajout] Système d'IA activable en appuyant sur {'i'}
+	- [Ajout] Sauvegarde d'image {'$'}
+	
 
 Version 1.1:
 
 	- Ajout d'une fonctionnalité ON/OFF qui permet d'activer/désactiver l'enregistrement
 	 en appuyant sur espace et ainsi déplacé le/les crayons vers une nouvelle position (barre espace)
 	- L'état actuel est indiqué par un voyant vert/rouge(activé/désactivé)
-	- Possibilité de changer le nombre de crayons actifs (&=1, é=2, "=3, '=4)
+	- Possibilité de changer le nombre de crayons actifs {'&'=1, 'é'=2, '"'=3, '''=4}
 
 
 Version 1.0:

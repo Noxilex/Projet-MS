@@ -50,11 +50,15 @@ public class Fenetre extends JPanel implements Runnable {
 	private int x;
 	private int y;
 
-	private KeyMap m = new KeyMap();
+	private KeyMap keyMap = new KeyMap();
+
+	public KeyMap getKeyMap() {
+		return keyMap;
+	}
 
 	public Fenetre() {
 		setSize(new Dimension(710, 710));
-		addKeyListener(m);
+		addKeyListener(keyMap);
 
 		x = this.getWidth() / 2;
 		y = this.getHeight() / 2;
@@ -71,28 +75,28 @@ public class Fenetre extends JPanel implements Runnable {
 	public Fenetre(boolean IA_State) {
 		this();
 		this.IA_State = IA_State;
-		m.IA_Activated = true;
+		keyMap.IA_Activated = true;
 		cptIA = 0;
 		Random r = new Random();
 		maxOccurences = r.nextInt(20)+5;
 	}
 
 	private void handleControl() {
-		IA_State = m.isIAActivated();
+		IA_State = keyMap.isIAActivated();
 		if(IA_State){
 			updateDirectionIA();
 		}else{
-			right = m.isDroite();
-			left = m.isGauche();
-			up = m.isHaut();
-			down = m.isBas();
+			right = keyMap.isDroite();
+			left = keyMap.isGauche();
+			up = keyMap.isHaut();
+			down = keyMap.isBas();
 		}
-		image = m.needImage();
-		reset = m.hasToReset();
-		canWrite = m.canWrite();
-		nbOfPoints = m.getNbOfPoints();
+		image = keyMap.needImage();
+		reset = keyMap.hasToReset();
+		canWrite = keyMap.canWrite();
+		nbOfPoints = keyMap.getNbOfPoints();
 		
-		currentFPS = FPS + m.getFPSChanger();
+		currentFPS = FPS + keyMap.getFPSChanger();
 	}
 
 	public void start() {
@@ -269,9 +273,10 @@ public class Fenetre extends JPanel implements Runnable {
 			// updateAutoPosition();
 			updateCouleur();
 			handleControl();
+			
 			if(image){
 				saveImage("test.png");
-				m.dontNeedImage();
+				keyMap.dontNeedImage();
 			}
 
 			if (left)
