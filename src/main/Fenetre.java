@@ -266,6 +266,10 @@ public class Fenetre extends JPanel implements Runnable {
 		}
 		cptIA++;
 	}
+	
+	boolean isOut(){
+		return x > getWidth() || y > getHeight() || y < 0 || x < 0 ;
+	}
 
 	/**
 	 * Boucle de jeu principale
@@ -275,6 +279,11 @@ public class Fenetre extends JPanel implements Runnable {
 		while (running) {
 			// TODO IA de déplacement automatique
 			// updateAutoPosition();
+			if(isOut()){
+				reset = true;
+				x = getWidth()/2;
+				y = getHeight()/2;
+			}
 			updateCouleur();
 			handleControl();
 			
