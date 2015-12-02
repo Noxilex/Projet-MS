@@ -1,7 +1,5 @@
 package main.IA;
 
-import java.io.ObjectInputStream.GetField;
-
 public abstract class iaAbstract {
 	boolean left;
 	boolean up;

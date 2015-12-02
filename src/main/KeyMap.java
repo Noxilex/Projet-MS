@@ -24,7 +24,6 @@ public class KeyMap implements KeyListener{
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
 		int key = e.getKeyCode();
 		if(e.getKeyChar() == 'r')
 			reset = true;
@@ -60,7 +59,6 @@ public class KeyMap implements KeyListener{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
 		int key = e.getKeyCode();
 		if(e.getKeyChar() == 'r')
 			reset = false;
@@ -76,15 +74,18 @@ public class KeyMap implements KeyListener{
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
 		if(e.getKeyChar() == '+' && maxFPSChange-FPSInterval >= FPSChanger)
-			FPSChanger += 5;
+			FPSChanger += FPSInterval;
 		if(e.getKeyChar() == '-' && -maxFPSChange+FPSInterval <= FPSChanger)
-			FPSChanger -= 5;
+			FPSChanger -= FPSInterval;
 		if(e.getKeyChar() == '$')
 			image = true;
 	}
 	
+	public int getFPSInterval() {
+		return FPSInterval;
+	}
+
 	public boolean isGauche(){
 		return gauche;
 	}
@@ -122,7 +123,6 @@ public class KeyMap implements KeyListener{
 	}
 
 	public boolean isIAActivated() {
-		// TODO Auto-generated method stub
 		return IA_Activated;
 	}
 	
@@ -132,5 +132,57 @@ public class KeyMap implements KeyListener{
 	
 	public boolean needImage(){
 		return image;
+	}
+
+	public void setDroite(boolean droite) {
+		this.droite = droite;
+	}
+
+	public void setGauche(boolean gauche) {
+		this.gauche = gauche;
+	}
+
+	public void setHaut(boolean haut) {
+		this.haut = haut;
+	}
+
+	public void setBas(boolean bas) {
+		this.bas = bas;
+	}
+
+	public void setReset(boolean reset) {
+		this.reset = reset;
+	}
+
+	public void setCanWrite(boolean canWrite) {
+		this.canWrite = canWrite;
+	}
+
+	public void setFPSChanger(int fPSChanger) {
+		FPSChanger = fPSChanger;
+	}
+
+	public void setFPSInterval(int fPSInterval) {
+		FPSInterval = fPSInterval;
+	}
+
+	public void setMaxFPSChange(int maxFPSChange) {
+		this.maxFPSChange = maxFPSChange;
+	}
+
+	public void setIA_Activated(boolean iA_Activated) {
+		IA_Activated = iA_Activated;
+	}
+
+	public void setLastDirection(int lastDirection) {
+		this.lastDirection = lastDirection;
+	}
+
+	public void setNbOfPoints(int nbOfPoints) {
+		this.nbOfPoints = nbOfPoints;
+	}
+
+	public void setImage(boolean image) {
+		this.image = image;
 	}
 }
