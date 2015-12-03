@@ -216,7 +216,7 @@ public class Fenetre extends JPanel implements Runnable {
 	private void updateDirectionIA(){
 		Random r = new Random();
 		if(cptIA%maxOccurences == 0){
-			maxOccurences = r.nextInt(5)*5+5;
+			maxOccurences = r.nextInt(10)*3+30;
 			int direction = r.nextInt(4);
 			switch(direction){
 			case 0:
