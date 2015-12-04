@@ -117,7 +117,8 @@ public class Fenetre extends JPanel implements Runnable {
 	 * 2) Dessine les carrés sur l'image
 	 */
 	public void drawOnImage(boolean draw) {
-		if (firstTime) {			
+		if (firstTime) {		
+			System.out.println("reset");
 			tmp = new BufferedImage(getWidth(), getHeight(),				//On initialise l'image ici, car lorsqu'on appelle paintComponent, 
 					BufferedImage.TYPE_INT_RGB);							//le JPanel change de dimension et les points ne se dessinent plus au même endroit.
 			g2 = tmp.createGraphics();
@@ -152,7 +153,7 @@ public class Fenetre extends JPanel implements Runnable {
 			drawOnImage(true);
 			g.drawImage(tmp, 0, 0, this.getWidth(), this.getHeight(), Color.BLACK, null);
 			g.setColor(Color.GREEN);
-		}else if(!canWrite){																		
+		}else{																		
 			drawOnImage(false);
 			g.drawImage(tmp, 0, 0, this.getWidth(), this.getHeight(), Color.BLACK, null);
 			g.setColor(Color.RED);
@@ -279,13 +280,13 @@ public class Fenetre extends JPanel implements Runnable {
 		while (running) {
 			// TODO IA de déplacement automatique
 			// updateAutoPosition();
-			if(isOut()){
+			updateCouleur();
+			handleControl();
+			if(isOut() && IA_State){
 				reset = true;
 				x = getWidth()/2;
 				y = getHeight()/2;
 			}
-			updateCouleur();
-			handleControl();
 			
 			if(image){
 				saveImage("Resources/test.png");
