@@ -23,7 +23,7 @@ public class Fenetre extends JPanel implements Runnable {
 	
 	boolean IA_State = false;
 	int cptIA;
-	int maxOccurences;
+	int maxOccurences =10;
 	//0:gauche 1:haut 2:droite 3:bas
 	int direction;
 
@@ -129,16 +129,16 @@ public class Fenetre extends JPanel implements Runnable {
 		if(draw){
 			g2.setColor(new Color(hexaR, hexaV, hexaB));
 			if (nbOfPoints >= 1) {
-				g2.fillRect(x, y, 1, 1);
+				g2.drawLine(x, y, x, y);
 			}
 			if (nbOfPoints >= 2) {
-				g2.fillRect(this.getWidth() - x, y, 1, 1);
+				g2.drawLine(this.getWidth() - x, y, this.getWidth() - x, y);
 			}
 			if (nbOfPoints >= 3) {
-				g2.fillRect(this.getWidth() - x, this.getHeight() - y, 1, 1);
+				g2.drawLine(this.getWidth() - x, this.getHeight() - y, this.getWidth() - x, this.getHeight() - y);
 			}
 			if (nbOfPoints >= 4) {
-				g2.fillRect(x, this.getHeight() - y, 1, 1);
+				g2.drawLine(x, this.getHeight() - y, x, this.getHeight() - y);
 			}
 		}
 	}
@@ -161,17 +161,17 @@ public class Fenetre extends JPanel implements Runnable {
 		g.fillRect(getWidth()-10, getHeight()-10, 10, 10);								//Indicateur d'écriture en bas à droite de l'image:
 		g.setColor(Color.ORANGE);														//Vert: Ecriture Activée
 		if (nbOfPoints >= 1) {															//Rouge: Ecriture Désactivée
-			g.fillRect(x, y, 1, 1);
+			g.drawLine(x, y, x, y);
 		}
 		g.setColor(Color.CYAN);
 		if (nbOfPoints >= 2) {
-			g.fillRect(this.getWidth() - x, y, 1, 1);
+			g.drawLine(this.getWidth() - x, y, this.getWidth() - x, y);
 		}
 		if (nbOfPoints >= 3) {
-			g.fillRect(this.getWidth() - x, this.getHeight() - y, 1, 1);
+			g.drawLine(this.getWidth() - x, this.getHeight() - y, this.getWidth() - x, this.getHeight() - y);
 		}
 		if (nbOfPoints >= 4) {
-			g.fillRect(x, this.getHeight() - y, 1, 1);
+			g.drawLine(x, this.getHeight() - y, x, this.getHeight()-y);
 		}
 		
 		//Affichage des FPS

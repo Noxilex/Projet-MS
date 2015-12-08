@@ -10,10 +10,12 @@ public class Main {
 	public static void main(String[] args) {
 		JFrame jf = new JFrame();
 		Fenetre f = new Fenetre(true);
-		jf.setPreferredSize(new Dimension(700,700));
+		Menu m = new Menu();
+		jf.setPreferredSize(new Dimension(900,700));
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.setLayout(new BorderLayout());
 		jf.add(f, BorderLayout.CENTER);
+		jf.add(m, BorderLayout.EAST);
 		jf.setResizable(false);
 		jf.pack();
 		jf.setLocationRelativeTo(null);
