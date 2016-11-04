@@ -3,4 +3,4 @@ Projet-MS is a simple and creative way of expressing your creativity by moving a
 
 This utility tool provide beautilful and colorful shapes which may be used for icons or logos creations.
 
-![alt tag](Ressources/test.png)
+![alt tag](Resources/test.png)
