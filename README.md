@@ -1,7 +1,7 @@
-# Projet-MS
-Projet-MS is a simple and creative way of expressing your creativity by moving around a point on the screen using your arrow keys.
+# RainbowLines
+RainbowLines is a simple and creative way of expressing your creativity by moving around a point on the screen using your arrow keys.
 
-This utility tool provide beautilful and colorful shapes which may be used for icons or logos creations.
+This utility tool provides beautilful and colorful shapes which may be used for icons or logos creations.
 
 ## Controls 
 - Arrow keys: move directions
